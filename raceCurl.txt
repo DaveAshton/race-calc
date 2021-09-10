@@ -1,0 +1,5 @@
+curl http://localhost:5000/race \
+    --include \
+    --header "Content-Type: application/json" \
+    --request "POST" \
+    --data '[{"entrant": "Bob","boat_class": "laser","finish_time": "2021-09-10::12:04:02", "elapsed_secs": 2003, "corrected_secs": 1989}]'

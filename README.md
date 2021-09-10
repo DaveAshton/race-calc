@@ -1,7 +1,7 @@
 
-# go-getting-started
+# Race-calc
 
-A barebones Go app, which can easily be deployed to Heroku.
+A sailing race corrected time calculator API.
 
 This application supports the [Getting Started with Go on Heroku](https://devcenter.heroku.com/articles/getting-started-with-go) article - check it out.
 
