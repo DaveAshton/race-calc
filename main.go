@@ -65,7 +65,7 @@ func dbFunc(db *sql.DB) gin.HandlerFunc {
 func getConnString() string {
 	log.Print("length DATABASE_URL: ", len(os.Getenv("DATABASE_URL")))
 	if len(os.Getenv("DATABASE_URL")) > 0 {
-		return os.Getenv("DATABASE_URL") + "?sslmode=disable"
+		return os.Getenv("DATABASE_URL")
 	}
 	return "sslmode=disable"
 }
