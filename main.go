@@ -62,6 +62,14 @@ func dbFunc(db *sql.DB) gin.HandlerFunc {
 	}
 }
 
+func getConnString() string {
+	log.Print("length DATABASE_URL: ", len(os.Getenv("DATABASE_URL")))
+	if len(os.Getenv("DATABASE_URL")) > 0 {
+		return os.Getenv("DATABASE_URL") + "?sslmode=disable"
+	}
+	return "sslmode=disable"
+}
+
 func main() {
 	port := os.Getenv("PORT")
 
@@ -77,7 +85,7 @@ func main() {
 		repeat = 5
 	}
 
-	connString := os.Getenv("DATABASE_URL") + "sslmode=disable"
+	connString := getConnString()
 	log.Printf("DATABASE_URL: %q", os.Getenv("DATABASE_URL"))
 	log.Printf("connection string: %q", connString)
 	db, err := sql.Open("postgres", connString)
