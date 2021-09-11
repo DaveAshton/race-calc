@@ -1,4 +1,4 @@
-module github.com/heroku/race-calc
+module github.com/daveashton/race-calc
 
 go 1.12
 
@@ -14,4 +14,7 @@ require (
 	github.com/stretchr/testify v1.3.0 // indirect
 	golang.org/x/net v0.0.0-20150629084131-d9558e5c97f8 // indirect
 	gopkg.in/bluesuncorp/validator.v5 v5.9.1 // indirect
+	race-calc/race v0.0.0-00010101000000-000000000000
 )
+
+replace race-calc/race => ./pkg/race

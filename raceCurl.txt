@@ -3,3 +3,10 @@ curl http://localhost:5000/race \
     --header "Content-Type: application/json" \
     --request "POST" \
     --data '[{"entrant": "Bob","boat_class": "laser","finish_time": "2021-09-10::12:04:02", "elapsed_secs": 2003, "corrected_secs": 1989}]'
+
+
+curl http://localhost:5000/race \
+    --include \
+    --header "Content-Type: application/json" \
+    --request "POST" \
+    --data '{"race_name": "Thaw 1", "start_time": "2019-10-12T07:20:50.52Z"}'
