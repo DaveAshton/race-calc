@@ -62,29 +62,6 @@ func dbFunc(db *sql.DB) gin.HandlerFunc {
 	}
 }
 
-// type RaceEntrant struct {
-// 	Entrant       string `form:"entrant" json:"entrant" binding:"required"`
-// 	BoatClass     string `form:"boat_class" json:"boat_class" binding:"required"`
-// 	FinishTime    string `form:"finish_time" json:"finish_time" binding:"required"`
-// 	ElapsedSecs   int    `form:"elapsed_secs" json:"elapsed_secs" binding:"required"`
-// 	CorrectedSecs int    `form:"corrected_secs" json:"corrected_secs" binding:"required"`
-// }
-// type Race []RaceEntrant
-
-// func postRace(db *sql.DB) gin.HandlerFunc {
-// 	return func(c *gin.Context) {
-// 		var raceData Race
-
-// 		if err := c.BindJSON(&raceData); err != nil {
-// 			log.Print("Error parsing race data", err)
-// 			return
-// 		}
-
-// 		log.Print("Parsed OK")
-// 		c.IndentedJSON(http.StatusCreated, raceData)
-// 	}
-// }
-
 func main() {
 	port := os.Getenv("PORT")
 
@@ -126,6 +103,8 @@ func main() {
 	router.GET("/db", dbFunc(db))
 
 	router.POST("/race", race.PostRace(db))
+
+	router.POST("/entrants", race.PostEntrants(db))
 
 	router.Run(":" + port)
 }

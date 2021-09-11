@@ -1,8 +1,8 @@
-curl http://localhost:5000/race \
+curl http://localhost:5000/entrants \
     --include \
     --header "Content-Type: application/json" \
     --request "POST" \
-    --data '[{"entrant": "Bob","boat_class": "laser","finish_time": "2021-09-10::12:04:02", "elapsed_secs": 2003, "corrected_secs": 1989}]'
+    --data '[{"entrant_name": "Bob", "race_id": 2, "boat_class": "laser", "py": 1099, "finish_time": "2019-10-12T07:20:50.52Z", "elapsed_secs": 2003, "corrected_secs": 1989}]'
 
 
 curl http://localhost:5000/race \
