@@ -111,8 +111,10 @@ func main() {
 	router.GET("/db", dbFunc(db))
 
 	router.POST("/race", race.PostRace(db))
+	router.GET("/races", race.GetRaces(db))
 
 	router.POST("/entrants", race.PostEntrants(db))
+	router.GET("/entrants", race.GetEntrants(db))
 
 	router.Run(":" + port)
 }

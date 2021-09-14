@@ -1,7 +1,7 @@
 CREATE TABLE IF NOT EXISTS race (
     race_id INT GENERATED ALWAYS AS IDENTITY,
     race_name VARCHAR NOT NULL,
-    start_time DATE NULL,
+    start_time TIMESTAMP NULL,
     PRIMARY KEY(race_id)
 );
 
@@ -11,7 +11,7 @@ CREATE TABLE IF NOT EXISTS entrants (
     race_id INT NOT NULL,
     boat_class VARCHAR NOT NULL,
     py INT NOT NULL,
-    finish_time DATE NULL,
+    finish_time TIMESTAMP NULL,
     elapsed_seconds INT NOT NULL,
     corrected_seconds INT NOT NULL,
 

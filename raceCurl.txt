@@ -2,7 +2,8 @@ curl http://localhost:5000/entrants \
     --include \
     --header "Content-Type: application/json" \
     --request "POST" \
-    --data '[{"entrant_name": "Bob", "race_id": 2, "boat_class": "laser", "py": 1099, "finish_time": "2019-10-12T07:20:50.52Z", "elapsed_secs": 2003, "corrected_secs": 1989}]'
+    --data '[{"entrant_name": "Bob", "race_id": 4, "boat_class": "laser", "py": 1099, "finish_time": "2019-10-12T07:20:50.52Z", "elapsed_secs": 2003, "corrected_secs": 1989},
+    {"entrant_name": "Pat", "race_id": 4, "boat_class": "laser", "py": 1022, "finish_time": "2019-10-12T07:20:50.52Z", "elapsed_secs": 2003, "corrected_secs": 1989}]'
 
 curl http://localhost:5000/race \
     --include \
@@ -14,7 +15,8 @@ curl https://agile-bastion-84936.herokuapp.com/entrants \
     --include \
     --header "Content-Type: application/json" \
     --request "POST" \
-    --data '[{"entrant_name": "Bob", "race_id": 2, "boat_class": "laser", "py": 1099, "finish_time": "2019-10-12T07:20:50.52Z", "elapsed_secs": 2003, "corrected_secs": 1989}]'
+    --data '[{"entrant_name": "Bob", "race_id": 2, "boat_class": "laser", "py": 1099, "finish_time": "2019-10-12T07:20:50.52Z", "elapsed_secs": 2003, "corrected_secs": 1989},
+    {"entrant_name": "Pat", "race_id": 2, "boat_class": "laser", "py": 1022, "finish_time": "2019-10-12T07:20:50.52Z", "elapsed_secs": 2003, "corrected_secs": 1989}]'
 
 curl https://agile-bastion-84936.herokuapp.com/race \
     --include \
